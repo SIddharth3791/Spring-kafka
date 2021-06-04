@@ -22,7 +22,7 @@ public class LibraryController {
 	public ResponseEntity<LibraryEvent> addNewBook(@RequestBody LibraryEvent libraryEvent) throws JsonProcessingException {
 		
 		libraryEvent.setLibraryEventType(LibEventType.NEW);
-		libEventProducer.sendLibrarySyncEventMessage(libraryEvent);
+		libEventProducer.sendLibraryEvent_Approach2(libraryEvent);
 		return ResponseEntity.status(HttpStatus.CREATED).body(libraryEvent);
 	}
 }
